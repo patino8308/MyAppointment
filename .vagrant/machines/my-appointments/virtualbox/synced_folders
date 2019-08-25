@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/my-appointments":{"type":null,"mount_options":["uid=1000","gid=1000"],"guestpath":"/home/vagrant/my-appointments","hostpath":"D:/wamp64/www/my-appointments","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"D:/wamp64/www/my-appointments","disabled":false,"__vagrantfile":true}}}
