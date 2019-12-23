@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'dni', 'address', 'phone', 'role'
     ];
 
     /**
@@ -25,7 +25,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'pivot', 'email_verified_at', 'dni', 'address', 'phone', 'role', 'created_at', 'updated_at'
     ];
 
     /**
@@ -36,4 +36,38 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function specialties()
+    {
+        return $this->belongsToMany(Specialty::class)->withTimestamps();
+    }
+
+    public function scopePatients($query)
+    {
+        return $query->where('role', 'patient');
+    }
+
+    public function scopeDoctors($query)
+    {
+        return $query->where('role', 'doctor');
+    }
+
+    public function asDoctorAppointments()
+    {
+        return $this->hasMany(Appointment::class, 'doctor_id');
+    }
+
+    public function asPatientAppointments()
+    {
+        return $this->hasMany(Appointment::class, 'patient_id');
+    }
+
+    public function attendedAppointments()
+    {
+        return $this->asDoctorAppointments()->where('status', 'Atendida');
+    }
+    public function cancelledAppointments()
+    {
+        return $this->asDoctorAppointments()->where('status', 'Cancelada');
+    }
 }

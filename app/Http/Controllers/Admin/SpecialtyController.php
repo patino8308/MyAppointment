@@ -1,18 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Specialty;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class SpecialtyController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
-    private function performValidation()
+    private function performValidation($request)
     {
 
         $rules = [

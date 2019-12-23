@@ -1,5 +1,11 @@
 @extends('layouts.panel')
 
+@section('styles')
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+@endsection
+
 @section('content')
 
     <div class="card shadow">
@@ -30,11 +36,7 @@
                     <input type="text" name="name" id="name" value="{{ old('name') }}" class="form-control">
                 </div>
                 <div class="form_group">
-                    <label for="description">E-mail</label>
-                    <input type="text" name="description" id="description" value="{{ old('description') }}" class="form-control">
-                </div>
-                <div class="form_group">
-                    <label for="email">Direccion</label>
+                    <label for="email">Email</label>
                     <input type="email" name="email" id="email" value="{{ old('email') }}" class="form-control">
                 </div>
                 <div class="form_group">
@@ -49,8 +51,25 @@
                     <label for="phone">Télefono</label>
                     <input type="text" name="phone" id="phone" value="{{ old('phone') }}" class="form-control">
                 </div>
+                <div class="form_group">
+                    <label for="password">Password</label>
+                    <input type="text" name="password" id="password" value="{{ str_random(6) }}" class="form-control">
+                </div>
+                <div class="form_group">
+                    <label for="specialties">Especialidades</label>
+                   <select name="specialties[]" id="specialties" class="form-control selectpicker" data-style="btn-primary" multiple title="Seleccione una o Varias">
+                         @foreach ($specialties as $specialty)
+                        <option value="{{ $specialty->id }}">{{ $specialty->name }}</option>
+
+                        @endforeach
+                   </select>
+                </div>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </form>
         </div>
     </div>
+@endsection
+@section('scripts')
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
 @endsection
