@@ -22,7 +22,7 @@ class CreateWorkDaysTable extends Migration
             $table->time('afternoon_start');
             $table->time('afternoon_end');
             $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            //$table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

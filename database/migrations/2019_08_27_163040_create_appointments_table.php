@@ -17,13 +17,13 @@ class CreateAppointmentsTable extends Migration
             $table->increments('id');
             $table->string('description');
             $table->unsignedInteger('specialty_id');
-            $table->foreign('specialty_id')->references('id')->on('specialties');
+            //$table->foreign('specialty_id')->references('id')->on('specialties');
 
             $table->unsignedInteger('doctor_id');
-            $table->foreign('doctor_id')->references('id')->on('users');
+            //$table->foreign('doctor_id')->references('id')->on('users');
 
             $table->unsignedInteger('patient_id');
-            $table->foreign('patient_id')->references('id')->on('users');
+            //$table->foreign('patient_id')->references('id')->on('users');
 
             $table->date('scheduled_date');
             $table->time('scheduled_time');

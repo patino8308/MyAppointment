@@ -16,9 +16,9 @@ class CreateSpecialtyUserTable extends Migration
         Schema::create('specialty_user', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            //$table->foreign('user_id')->references('id')->on('users');
             $table->unsignedInteger('specialty_id');
-            $table->foreign('specialty_id')->references('id')->on('specialties');
+            //$table->foreign('specialty_id')->references('id')->on('specialties');
             $table->timestamps();
         });
     }
