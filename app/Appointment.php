@@ -53,7 +53,7 @@ class Appointment extends Model
         return (new Carbon($this->scheduled_time))->format('g:i A');
     }
 
-    public function createFormPatient(Request $request, $patientId)
+    public static function createFormPatient(Request $request, $patientId)
     {
         $data = $request->only([
             'description',
