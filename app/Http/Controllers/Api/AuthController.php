@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Htpp\Traits\ValidateAndCreatePatient;
-
+use App\Http\Traits\ValidateAndCreatePatient;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Registered;

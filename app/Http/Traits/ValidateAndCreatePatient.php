@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Htpp\Traits;
+namespace App\Http\Traits;
 
 use App\User;
 use Illuminate\Support\Facades\Validator;
