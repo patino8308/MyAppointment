@@ -54,6 +54,7 @@
 
 @task('migrate', ['on' => $on])
     cd {{ $app_dir }}
+    {{-- php artisan migrate --}}
     php artisan migrate:refresh --seed
 @endtask
 
