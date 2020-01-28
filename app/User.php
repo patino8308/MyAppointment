@@ -90,4 +90,17 @@ class User extends Authenticatable
     {
         return $this->asDoctorAppointments()->where('status', 'Cancelada');
     }
+
+    public function sendFCM($message)
+    {
+        return fcm()->to([
+            $this->device_token
+        ])
+            ->priority('high')
+            ->timeToLive(0)
+            ->notification([
+                'title' => config('app.name'),
+                'body' => $message,
+            ])->send();
+    }
 }

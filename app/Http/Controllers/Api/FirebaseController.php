@@ -18,4 +18,3 @@ class FirebaseController extends Controller
         }
     }
 }
-http://3.133.87.66/api/fcm/token?device_token=dfiUM9bM0Rw%3AAPA91bHqu7tCaKG3M3XRFtCBRbrsQhOPiL-UJMZphXbmvJuujSNvieg1TNbuBgg-QZYJwM2-1qETawY9i35OWrfZE5KXEKWvoCALDlWG3zp1ndrLrymC0qzYuvyBvlEmmBs723sBdn7B
