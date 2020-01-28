@@ -44,7 +44,7 @@ Route::middleware(['auth', 'admin'])->namespace('Admin')->group(function () {
     Route::get('/charts/doctors/column/data', 'ChartController@doctorsJson');
 
     //FCM
-    Route::post('/fcm/send', 'FirebaseController@SendAll');
+    Route::post('/fcm/send', 'FireBaseController@SendAll');
 });
 
 Route::middleware(['auth', 'doctor'])->namespace('Doctor')->group(function () {
