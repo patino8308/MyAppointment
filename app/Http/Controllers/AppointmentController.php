@@ -122,7 +122,7 @@ class AppointmentController extends Controller
     public function postConfirm(Appointment $appointment)
     {
 
-        $appointment->status = '5';
+        $appointment->status = 'Confirmada';
         $saved = $appointment->save();
 
         if ($saved)
