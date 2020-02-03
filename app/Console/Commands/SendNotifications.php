@@ -44,14 +44,14 @@ class SendNotifications extends Command
         $headers = ['id', 'scheduled_date', 'scheduled_time', 'patient_id'];
         $this->info('Buscando Citas:');
 
-        $appointmentsTomorrow = $this->getAppointments24Hours($now);
+        $appointmentsTomorrow = $this->getAppointments24Hours($now->copy());
 
         foreach ($appointmentsTomorrow as $appointment) {
             $appointment->patient->sendFCM('No Olvides tu Cita para mañana  a esta hora');
             $this->info('Mensaje enviado 24 Horas antes al paciente (ID):' . $appointment->patient_id);
         }
         $this->table($headers, $appointmentsTomorrow);
-        $appointmentsNextHour = $this->getAppointmentsNextHour($now);
+        $appointmentsNextHour = $this->getAppointmentsNextHour($now->copy());
 
         foreach ($appointmentsNextHour as $appointment) {
             $appointment->patient->sendFCM('Tienes una cita en 1 Hora. Te Esperamos');
