@@ -26,7 +26,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'pivot', 'email_verified_at', 'dni', 'address', 'phone', 'role', 'created_at', 'updated_at'
+        'password', 'remember_token', 'pivot', 'email_verified_at', 'dni', 'role', 'created_at', 'updated_at'
     ];
 
     public static $rules = [
